@@ -5,6 +5,7 @@ app.get('/', (req, res) => {
    res.send("Hello from Expresso!");
 });
 
-app.listen(3000, () => {
+app.listen(3000, '0.0.0.0', () => {
    console.log('Jackpot!');
 });
+
