@@ -10,4 +10,17 @@ services:
       - /app/node_modules
     working_dir: /app
     command: ["npm", "run", "dev"]
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: database
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db
+
+volumes:
+  mongo-data:
 
